@@ -1,0 +1,29 @@
+strategy:
+  type: copy
+  volume_ratio: 0.1
+  target:
+    driver: rubykube
+    market: 'ETHBTC'
+    host: "https://tradeherald.com"
+    key: ""
+    secret: ""
+    rate_limit: 1
+  sources:
+#    - driver: bitfaker
+#      market: 'tETHUSD'
+#      host: "api.bitfinex.com"
+#      key: ""
+#      secret: ""
+#      rate_limit: 0.2
+#    - driver: bitfinex
+#      market: 'tETHUSD'
+#      host: "api.bitfinex.com"
+#      key: ""
+#      secret: ""
+#      rate_limit: 0.2
+    - driver: binance
+      market: 'ETHBTC'
+      host: "api.binance.com"
+      key: ""
+      secret: ""
+      rate_limit: 0.2

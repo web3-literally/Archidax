@@ -1,0 +1,60 @@
+<!-- <div class="row justify-content-center">
+  <div class="container-fluid box-shadow mx-3">
+    <div class="mb-3">
+      <h2 class="title font-weight-bold">Sign up</h2>
+    </div>
+  </div>
+
+  <div class="container-fluid px-5 py-4">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :email, 'Email' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control form-control-lg underlined', placeholder: 'Email' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, 'Password' %>
+        <%= f.password_field :password, autocomplete: 'off', class: 'form-control form-control-lg underlined', placeholder: @minimum_password_length ? "Password (#{@minimum_password_length} characters minimum)" : "Password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'Confirm password' %>
+        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control form-control-lg underlined', placeholder: 'Password confirmation' %>
+      </div>
+
+      <div class="mt-4">
+        <%= f.submit 'Submit', class: 'btn btn-block btn-success col-6' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+ -->
+
+
+<h3 class="p-4">Register</h3>
+<div class="cryptorio-main-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "text-left" }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.label :email, 'Email' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'Your email/cellphone' %>
+
+    <%= f.label :password, 'Password' %>
+    <%= f.password_field :password, autocomplete: 'off', placeholder: @minimum_password_length ? "Password (#{@minimum_password_length} characters minimum)" : "6-20 letters and numbers" %>
+
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation, autocomplete: 'off', placeholder: '6-20 letters and numbers' %>
+
+    <div class="my-1">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="terms-agree">
+        <label class="custom-control-label" for="terms-agree" id="terms-agree-label">I agree to the terms of services</label>
+        <p class="error error-checkbox">You need to read and agree with terms of services.</p>
+      </div>
+    </div>
+    <%= f.submit 'SignUp', class: 'crypt-button-red-full' %>
+  <% end %>
+  <p class="float-left"><a href="/accounts/sign_in">Log In</a></p>
+  <p class="float-right"><a href="/accounts/password/new">Recover Password</a></p>
+</div>

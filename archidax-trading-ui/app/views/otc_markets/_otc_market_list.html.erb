@@ -1,0 +1,43 @@
+<div id="market_list_container">
+    <ul class="nav nav-tabs" id="crypt-tab">
+        <li role="presentation">
+            <a class="active" data-name="all" href="javascript:;">
+                <%= t('.all_html') %>
+            </a>
+        </li>
+        <% @data[:otc_market_groups].each do |name| %>
+            <li role="presentation">
+                <a href="#" data-name="<%= name %>"><%= t('.ccy_html', currency: name.upcase) %></a>
+            </li>
+        <% end %>
+    </ul>
+    <div class="tab-content crypt-tab-content">
+        <div role="tabpanel" class="tab-pane active" id="usd">
+            <table class="table table-striped markets">
+                <thead>
+                    <tr>
+                        <th scope="col"><span class="name"><%= t('.all') %></span></th>
+                        <th scope="col"><%= t('.price') %></th>
+                        <th scope="col"><%= t('.change') %></th>
+                    </tr>
+                </thead>
+                <tbody class="crypt-table-hover">
+                    <% @data.fetch(:otc_markets).each do |otc_market| %>
+                        <tr class="markets-toggle" id="market-list-<%= otc_market.fetch(:id) %>" data-quote-unit="<%= otc_market.fetch(:bid_unit) %>" data-base-unit="<%= otc_market.fetch(:ask_unit) %>" data-market="<%= otc_market[:id] %>">
+                            <td class="align-middle">
+                                <%= link_to otc_market.fetch(:name), '/otc-trading/' + otc_market.fetch(:id) %>
+                            </td>
+                            <td class="align-middle price">
+                            <!-- zealousWang todo: check ticker-->
+                                <%= otc_market.fetch(:otc_ticker).fetch(:last) %>
+                            </td>
+                            <td class="change">
+                                | +0.00%
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

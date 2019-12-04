@@ -1,0 +1,9 @@
+<tr>
+  <td><%= t(".#{otc_trade_side otc_trade}") %></td>
+  <td><%= otc_trade.created_at %></td>
+  <td><%= otc_trade.otc_market.bid_unit.upcase %></td>
+  <td><%= otc_trade.volume %></td>
+  <td><%= otc_trade.otc_market.ask_unit.upcase %></td>
+  <td><%= otc_trade.volume*otc_trade.price %></td>
+  <td><%= otc_trade.price %></td>
+</tr>

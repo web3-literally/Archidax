@@ -1,0 +1,11 @@
+<tr>
+  <td><%= otc_order.id %></td>
+  <td><%= t(".#{otc_order.kind}") %></td>
+  <td><%= t(".#{otc_order.state}") %></td>
+  <td><%= otc_order.otc_market_id.upcase %></td>
+  <td><%= otc_order.price %></td>
+  <td><%= otc_order.origin_volume %></td>
+  <td><%= otc_order.avg_price %></td>
+  <td><%= otc_order.origin_volume - otc_order.volume %></td>
+  <td><%= otc_order.created_at %></td>
+</tr>

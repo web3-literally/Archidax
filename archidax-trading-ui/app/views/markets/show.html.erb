@@ -1,0 +1,86 @@
+<audio preload="preload" id="success-fx">
+  <source src="<%= audio_path('success.mp3') %>" />
+</audio>
+
+<audio preload="preload" id="warning-fx">
+  <source src="<%= audio_path('warning.mp3') %>" />
+</audio>
+
+<%= render 'new_header' %>
+<div class="container-fluid">
+    <div class="row sm-gutters">
+        <div class="col-md-12 col-lg-12 col-xl-6 col-xxl-4">
+            <div class="crypt-market-status mt-4">
+                <%= render 'new_market_list' %>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-16">
+            <%= render 'new_ticker_info' %>
+
+            <!-- <div class="tradingview-widget-container mb-3">
+                <div id="crypt-candle-chart"></div>
+            </div> -->
+            <div class="chart-container mb-3">
+                <%= render partial: 'candlestick' %>
+                <%= render partial: 'range_switch' %>
+                <%= render partial: 'indicator_switch' %>
+            </div>
+
+            <%= render partial: 'depths' %>
+            <!-- <div id="depthchart" class="depthchart h-40 crypt-dark-segment"></div> -->
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-xl-6 col-xxl-4">
+            <div class="crypt-market-status mt-4">
+
+                <%= render partial: 'new_market_trades' %>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row sm-gutters">
+        <div class="col-xl-10">
+            <div class="crypt-boxed-area">
+                <h6 class="crypt-bg-head"><b class="crypt-up">BUY</b> / <b class="crypt-down">SELL</b></h6>
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <%= render partial: 'new_bid_entry', locals: { market: @data.fetch(:current_market) } %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= render partial: 'new_ask_entry', locals: { market: @data.fetch(:current_market) } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-14">
+            <div>
+                <div class="crypt-market-status">
+                    <div>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation"><a href="#active-orders" class="active" data-toggle="tab">Active Orders</a></li>
+                            <li role="presentation"><a href="#my-orders" data-toggle="tab">My Orders</a></li>
+                            <% if @data[:current_member] %>
+                                <li role="presentation"><a href="#balance" data-toggle="tab">Balance</a></li>
+                            <% end %>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="active-orders">
+                                <%= render partial: 'new_order_book' %>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="my-orders">
+                                <%= render partial: 'new_my_orders', locals: { market: @data.fetch(:current_market) } %>
+                            </div>
+                            <% if @data[:current_member] %>
+                                <div role="tabpanel" class="tab-pane" id="balance">
+                                    <%= render partial: 'new_account_summary' %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

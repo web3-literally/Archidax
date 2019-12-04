@@ -1,0 +1,1403 @@
+/*------------------------------------------------------------------
+
+Plugin: Cryptoria Trading Dashboard UI Template
+Version: 1.0
+Date Created: 06/02/2019
+Author: Tophive
+Licence: Themeforest Licence 
+-------------------------------------------------------------------*/
+/* 
+-------------------- 
+Table Of contents
+--------------------
+1.Helper Class
+2. Header
+3. Mobile menu
+4. Sidebar menu
+5. Buy sell form
+6. Charts
+
+/* 
+------------- Helper Class ---------------
+ */
+
+body{
+    background: #f9faff;
+    overflow-x: hidden;
+    margin-top: 65px;
+    font-size: 13px;
+}
+iframe body{
+    margin: 0;
+}
+/*------------- dark theme -------------*/
+.crypt-dark{
+    background: #0e162d;
+}
+.crypt-dark .icon-big{
+    color: #fff;
+}
+.crypt-dark .input-group select{
+    background: #131a33;
+    border: 1px solid #2f3a56;
+}
+.crypt-dark h1,
+.crypt-dark h2,
+.crypt-dark h3,
+.crypt-dark h4,
+.crypt-dark h5,
+.crypt-dark h6,
+.crypt-dark p,
+.crypt-dark a{
+    color: #fff;
+}
+.crypt-dark-segment{
+    background: #131722;
+}
+.crypt-deepblue-segment{
+    background: #131a33;
+}
+body.crypt-dark .input-group-text{
+
+    color: #e9ecef;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #0e162d;
+    border: 1px solid #2f3a56;
+    border-radius: 0;
+}
+body.crypt-dark .form-control {
+    color: #ffffff;
+    background-color: #0e162d;
+    background-clip: padding-box;
+    border: 1px solid #2f3a56;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.bg-white{
+    background: #fff;
+}
+g[opacity="0.3"],
+g[opacity="0.4"]{
+    display: none;
+}
+.crypt-logo img{
+    height: 70px !important;
+}
+/*--- colors ----*/
+.crypt-yellow{
+    color: #f8a43e;
+}
+.crypt-green{
+    color: #86d6a6;
+}
+.crypt-violet{
+    color: #5d49c2;
+}
+.crypt-red{
+    color: #f7614e  ;
+}
+.crypt-sky-blue{
+    color: #31ccf8  ;
+}
+.crypt-pink{
+    color: #fb7ab9  ;
+}
+.crypt-brown{
+    color: #dca875  ;
+}
+
+.sm-box-shadow{
+    box-shadow: 0 2px 30px #f1f1f1;
+}
+.container-full-width{
+    width: 100%;
+}
+.sm-gutters>.col, .sm-gutters>[class*=col-]{
+    padding-right: 7px;
+    padding-left: 7px;
+}
+.crypt-btn{
+    color: #555;
+    padding: 15px 20px;
+    background: #fff;
+    text-decoration: none;
+-webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+}
+.crypt-btn > i{
+    font-size: 18px;
+    vertical-align: text-bottom;
+-webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+}
+.crypt-btn:hover > i{
+    padding-left: 7px;
+}
+.crypt-btn:hover{
+    text-decoration: none;
+    color: #555;
+    box-shadow: 0 3px 30px #f1f1f1;
+}
+body.crypt-dark .crypt-btn:hover{
+    box-shadow: none;
+}
+.crypt-button-inline{
+    display: inline-block;
+} 
+.crypt-btn-green{
+    background: #49c279;
+    color: #fff;
+} 
+.crypt-btn-red{
+    background: #f7614e;
+    color: #fff;
+}
+.crypt-btn-green:hover,
+.crypt-btn-red:hover{
+    color: #fff;
+}
+.fright{
+    float: right;
+}
+.crypt-bg-head{
+    background: #ecf4fe;
+    padding: 13px;
+}
+.crypt-boxed-area{
+    border: 1px solid #f1f1f1;
+    background: #fff;
+}
+body.crypt-dark .crypt-bg-head{
+    background: #1f2638;
+    padding: 13px;
+}
+body.crypt-dark .crypt-boxed-area{
+    background: #131a33;
+    border: none;
+    color: #fff;
+}
+
+.crypt-up{
+    color: #49c279 !important;
+}
+.crypt-down{
+    color: red !important;
+}
+.padding-left{
+    padding-left: 30px;
+}
+.crypt-button-green-full{
+    background: #49c279;
+    color: #fff;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+.crypt-button-green-full:hover{
+    background: #34a560;
+    text-decoration: none;
+    color: #fff;
+}
+.crypt-button-red-full{
+    background: #f7614e !important;
+    border: none !important;
+    color: #fff;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+.crypt-button-red-full:hover{
+    text-decoration: none;
+    color: #fff;
+    background: #ca3a28;
+}
+.crypt-header{
+    box-shadow: 0 2px 20px #f1f1f1;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 70px;
+}
+.crypt-mega-dropdown-menu{
+    position: relative;
+}
+.crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle{
+    color: #666;
+    display: inline-block;
+    font-weight: 600;
+    padding: 25px 20px;
+    text-decoration: none;
+    outline: none;
+    font-size: 15px;
+    border-right: 1px solid #ddd;
+}
+.crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle i{
+    font-weight: 600;
+}
+.crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle:hover{
+    text-decoration: none;
+}
+.crypt-mega-dropdown-menu-block{
+    position: absolute;
+    background: #fff;
+    padding: 20px;
+    width: 550px;
+    box-shadow: 0 7px 17px rgba(0,0,0,0.08);
+    top: 76px;
+    opacity: 0;
+    display: none;
+    transition: all 0.4s ease;
+    border: 1px solid #f1f1f1;
+}
+.crypt-mega-dropdown-menu-block.shown{
+    opacity: 1;
+    display: block;
+}
+
+.crypt-mega-dropdown-menu-block:after{
+    position:absolute;
+    content: '';
+    z-index: -1;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+    box-shadow: 0 -2px 20px #ddd;
+}
+
+.crypt-gross-market-cap{
+    margin: 15px 0 20px 0;
+}
+.crypt-gross-market-cap p:first-child{
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.crypt-gross-market-cap p:last-child{
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* -----------------------------------
+----------- Header -------------------
+------------------------------------ -- */
+
+.crypt-header i.menu-toggle{
+    position: absolute;
+    right: 15px;
+    transform: rotate(45deg);
+    top: 50%;
+    font-size: 33px;
+    transition: all 0.4s ease;
+    transform: translateY(-50%) rotate(0deg);
+}
+.crypt-header i:hover{
+    cursor: pointer;
+}
+.crypt-header i.open{
+    transform: translateY(-50%) rotate(0deg);
+}
+.crypt-heading-menu{
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+    float: right;
+}
+.crypt-heading-menu li{
+    margin: 0 -18px;
+    padding: 0 10px; 
+}
+.crypt-heading-menu li{
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 18px;
+}
+.crypt-heading-menu li:last-child{
+    margin-right: 7px !important;
+}
+.crypt-heading-menu li.active{
+}
+.crypt-heading-menu li a{
+    color: #555;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    padding: 9px 0px;
+    display: inline-block;
+    font-size: 11px;
+}
+.crypt-heading-menu li a:hover{
+    color: #f7614e;
+    border-bottom: 1px solid #f7614e;
+}
+.crypt-heading-menu li.active a{
+    color: #f7614e;
+    border-bottom: 1px solid #f7614e;
+}
+.crypt-dark .crypt-header{
+    box-shadow: none;
+    background: #202943;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 70px;
+    color: #fff;
+}
+.crypt-dark .crypt-mega-dropdown-menu{
+    position: relative;
+}
+.crypt-dark .crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle{
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 25px 20px;
+    text-decoration: none;
+    outline: none;
+    font-size: 15px;
+    border-right: 1px solid #202943;
+}
+.crypt-dark .crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle i{
+    font-weight: 600;
+}
+.crypt-dark .crypt-mega-dropdown-menu a.crypt-mega-dropdown-toggle:hover{
+    text-decoration: none;
+}
+.crypt-dark .crypt-mega-dropdown-menu-block{
+    position: absolute;
+    background: #202943;
+    padding: 20px;
+    width: 550px;
+    box-shadow: 0 7px 17px rgba(0,0,0,0.08);
+    top: 76px;
+    opacity: 0;
+    display: none;
+    transition: all 0.4s ease;
+    border: 1px solid #202943;
+}
+.crypt-dark .crypt-mega-dropdown-menu-block.shown{
+    opacity: 1;
+    display: block;
+}
+
+.crypt-dark .crypt-mega-dropdown-menu-block:after{
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: #202943;
+    transform: rotate(45deg);
+    box-shadow: 0 -2px 20px #0e162d;
+}
+
+.crypt-dark .crypt-gross-market-cap {
+    padding: 25px;
+    background: #1f2638;
+}
+.crypt-dark .crypt-gross-market-cap p:first-child{
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.crypt-dark .crypt-gross-market-cap p:last-child{
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* --menu -- */
+.crypt-dark .crypt-header i.menu-toggle{
+    position: absolute;
+    right: 15px;
+    transform: rotate(45deg);
+    top: 50%;
+    font-size: 33px;
+    transition: all 0.4s ease;
+    transform: translateY(-50%) rotate(0deg);
+}
+.crypt-dark .crypt-header i:hover{
+    cursor: pointer;
+}
+.crypt-dark .crypt-header i.open{
+    transform: translateY(-50%) rotate(0deg);
+}
+.crypt-dark .crypt-heading-menu{
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+    float: right;
+}
+.crypt-dark .crypt-heading-menu li{
+    margin: 0 -18px;
+    padding: 0 10px; 
+}
+.crypt-dark .crypt-heading-menu li{
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 16px;
+}
+.crypt-dark .crypt-heading-menu li.active{
+}
+.crypt-dark .crypt-heading-menu li a{
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    padding: 9px 0px;
+    display: inline-block;
+    font-size: 11px;
+}
+.crypt-dark .crypt-heading-menu li a:hover{
+    color: #f7614e;
+    border-bottom: 1px solid #f7614e;
+}
+.crypt-dark .crypt-heading-menu li.active a{
+    color: #f7614e;
+    border-bottom: 1px solid #f7614e;
+}
+
+.menu-red{
+    background: #f7614e;
+}
+.menu-red a{
+    color: #fff !important;
+}
+.menu-red a:hover{
+    border-bottom: none !important;
+    background: #e2513e;
+}
+.menu-green{
+    background: #49c279;
+}
+.menu-green a{
+    color: #fff !important;
+}
+.menu-green a:hover{
+    border-bottom: none !important;
+    background: #30ad62 !important;
+}
+
+/*---------------------------------- 
+---------------Mobile menu------------
+---------------------------------------*/
+
+.crypt-mobile-menu{
+    position: fixed;
+    z-index: 2;
+    width: 250px;
+    background: #fff;
+    padding: 15px;
+    top: 0;
+    height: 100vh;
+    padding-top: 115px;
+    right: -100%;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    box-shadow: 0px 10px 20px #ddd;
+}
+.crypt-mobile-menu.show{
+    right: 0;
+}
+.crypt-dark .crypt-mobile-menu.show {
+    right: 0;
+    background: #202943;
+    box-shadow: 0 20px 20px #000;
+}
+.crypt-mobile-menu .crypt-heading-menu{
+    list-style: none;
+    padding-left: 0;
+    margin: 30px 0;
+    float: none;
+}
+.crypt-mobile-menu .crypt-heading-menu li{
+    /* padding: 10px; */
+    margin: 0 -18px;
+}
+.crypt-mobile-menu .crypt-heading-menu li{
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 18px 10px;
+}
+.crypt-mobile-menu .crypt-heading-menu li a:hover{
+    border-bottom: none;
+}
+.crypt-mobile-menu .crypt-heading-menu li.active a{
+    border-bottom: none;
+}
+.crypt-mobile-menu .crypt-heading-menu .crypt-box-menu{
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px;
+}
+.crypt-mobile-menu .crypt-gross-market-cap{
+    margin: 10px;
+}
+
+/*---  Side menu bar ----*/
+.crypt-side-menu{
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    width: 205px;
+    padding: 25px;
+    top: 0;
+    z-index: 11;
+    padding-top: 115px;
+}
+body.crypt-dark .crypt-side-menu{
+    background: #131a33 !important;
+}
+.crypt-left-sided{} 
+
+
+.crypt-side-menu ul{
+    padding: 0;
+} 
+.crypt-side-menu p{
+    color: #999;
+} 
+.crypt-side-menu ul li{
+    list-style: none;
+    padding: 10px 0;
+} 
+.crypt-side-menu ul li a{
+    color: #555;
+    font-weight: 600 !important;
+    text-decoration: none;
+    position: relative;
+}
+body.crypt-dark .crypt-side-menu ul li a{
+    color: #fff;
+}
+.crypt-side-menu ul li a:after{
+    position: absolute;
+    content: '';
+    background: #666;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    transition: all 0.4s ease;
+}
+.crypt-side-menu ul li a:hover:after{
+    width: 100%;
+}
+/* market status */
+
+.crypt-market-status{
+    background: #fff;
+    box-shadow: 0 2px 10px #f1f1f1;
+}
+ul.nav-tabs{
+    padding: 13px 0px;
+    border: none;
+    background: #ecf4fe;
+}
+ul.nav-tabs li{
+    padding: 0 13px;
+}
+ul.nav-tabs li a{
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 12px;
+    font-size: 13px;
+}
+ul.nav-tabs li{}
+ul.nav-tabs li a.active{
+    border-bottom: 3px solid #f7614e;
+}
+.tab-content{
+
+}
+.crypt-table-danger{
+    background: #ffedea !important;
+}
+.crypt-table-success{
+    background: #f9fcff !important;
+}
+.crypt-table-hover tr:hover{
+    background: #ffedea !important;
+}
+table td,
+table th{
+    border: none !important;
+}
+
+/*---- Dark ----*/
+body.crypt-dark .crypt-market-status{
+    background: #fff;
+    box-shadow: none;
+}
+body.crypt-dark ul.nav-tabs{
+    padding: 13px 0px;
+    border: none;
+    background: #1f2638;
+}
+body.crypt-dark ul.nav-tabs li{
+    padding: 0 13px 10px;
+}
+body.crypt-dark ul.nav-tabs li a{
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+body.crypt-dark ul.nav-tabs li{}
+body.crypt-dark ul.nav-tabs li a.active{
+    border-bottom: 3px solid #f7614e;
+}
+body.crypt-dark .tab-content table{
+    margin-bottom: 0;
+}
+body.crypt-dark .tab-content table thead{
+    background: #131722;
+    color: #fff;
+}
+body.crypt-dark .tab-content table thead tr{
+    cursor: none;
+    background: #131722 !important;
+}
+body.crypt-dark .tab-content table thead tr:hover{
+    background: #131722 !important;
+
+}
+body.crypt-dark .tab-content table tbody{}
+body.crypt-dark .tab-content table tr:hover{
+    background: #242c40 !important;
+    cursor: pointer;
+}
+body.crypt-dark .tab-content table tr:nth-of-type(odd){
+    background: #131a33;
+    color: #fff;
+}
+body.crypt-dark .tab-content table tr:nth-of-type(even){
+    background: #11152b;
+    color: #fff;
+}
+body.crypt-dark .crypt-table-danger{
+    background: #ffedea !important;
+}
+body.crypt-dark .crypt-table-success{
+    background: #f9fcff !important;
+}
+body.crypt-dark .crypt-table-hover tr:hover{
+    background: #ffedea !important;
+}
+body.crypt-dark table td,
+body.crypt-dark table th{
+    border: none !important;
+}
+body.crypt-dark .no-orders{
+    background: #131a33;
+}
+/*------------ Table dark ends -------*/
+
+#depths_wrapper {
+  width: 100%;
+  height: 350px;
+}
+.crypto-depth-chart-small-height{
+    height: 270px !important;
+}
+#chartdiv {
+  width: 100%;
+  height: 350px;
+}
+/*-------------------------------
+--------- buy sell form ----------
+--------------------------------------*/
+.crypt-buy-sell-form > p{
+    padding: 20px;
+    margin-bottom: 0;
+}
+.crypt-buy{
+    padding: 20px;
+    border-top: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+}
+.crypt-sell{
+    padding: 20px;
+    border-top: 1px solid #f1f1f1;
+}
+body.crypt-dark .crypt-buy{
+    padding: 20px;
+    border-top: 1px solid #233161;
+    border-right: 1px solid #233161;
+}
+body.crypt-dark .crypt-sell{
+    padding: 20px;
+    border-top: 1px solid #233161;
+}
+
+/*0--- market Capacity ----*/
+.crypt-table-striped tbody tr:nth-of-type(even){
+    background-color: #f7fbff; 
+}
+.crypt-table-market-cap{
+    background: #fff;
+    font-size: 15px;
+}
+body.crypt-dark .crypt-table-market-cap{
+    background: none;
+    font-size: 15px;
+    color: #fff;
+}
+.crypt-table-market-cap thead{
+    background: #ecf4fe;
+}
+body.crypt-dark .crypt-table-market-cap thead{
+    background: #1f2638;
+}
+.crypt-table-market-cap thead tr th{
+    text-align: center;
+    padding: 15px 0;
+    vertical-align: middle;
+}
+.crypt-table-market-cap tbody{}
+.crypt-table-market-cap tbody tr:hover{
+    background: #242c40 !important
+}
+.crypt-table-market-cap tbody tr th{
+    padding: 25px 20px;
+    text-align: center;
+}
+.crypt-table-market-cap tbody tr td{
+    padding: 25px 0;
+    text-align: center;
+}
+@media screen and (max-width: 500px) {
+    .crypt-table-market-cap tbody tr td{
+        min-width: 103px;
+    }
+}
+.crypt-table-market-cap tbody tr td a{
+    color: #555;
+}
+body.crypt-dark .crypt-table-market-cap tbody tr td a{
+    color: #fff;
+}
+.crypt-table-market-cap tbody tr td:last-child{
+    max-width: 120px;
+    padding: 0;
+}
+.crypt-table-market-cap tbody tr td:last-child canvas{
+    display: inline !important;
+    margin-top: 15px;
+} 
+img.crypt-market-cap-logo{
+    margin-top: -3px;
+}
+
+
+/*---------------------------------------
+------------------- chart -----------------
+--------------------------------------------*/
+.crypt-fulldiv-linechart{
+    padding: 22px 0px 100px 0;
+    text-align: center;
+    position: relative;
+}
+.crypt-fulldiv-linechart:after{
+    position: absolute;
+    content: '';
+    width: calc(100% - 10px);
+    background: #fff;
+    top: 0;
+    left: 5px;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0 3px 15px #f1f1f1;
+}
+body.crypt-dark .crypt-fulldiv-linechart:after{
+    background: #202943;
+    box-shadow: none;
+}
+.crypt-fulldiv-linechart h4.coinname{
+    margin-top: 30px;
+}
+.crypt-fulldiv-linechart .crypt-individual-marketcap canvas{
+    margin-left: -5px;
+}
+.crypt-fulldiv-linechart .coin-meta-data{
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.crypt-fulldiv-linechart .coin-meta-data h5 i{
+    font-weight: 600;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+.crypt-fulldiv-linechart .coin-meta-data h3{}
+.crypt-fulldiv-linechart .coin-meta-data h6{}
+
+.crypt-individual-marketcap iframe body{
+    margin: 0;
+}
+.coin-meta-data h4{
+    font-weight: 800;
+    margin-top: 12px;
+}
+/*---- Slider ---*/
+.vert .carousel-item-next.carousel-item-left,
+.vert .carousel-item-prev.carousel-item-right {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+.vert .carousel-item-next,
+.vert .active.carousel-item-right {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100% 0);
+}
+
+.vert .carousel-item-prev,
+.vert .active.carousel-item-left {
+-webkit-transform: translate3d(0,-100%, 0);
+        transform: translate3d(0,-100%, 0);
+}
+.crypt-currency-slider{
+    border: 1px solid #ecf4fe;
+}
+body.crypt-dark .crypt-currency-slider{
+    border: none;
+}
+.crypt-slider-content{
+    background: #fff;
+    /* padding: 40px; */
+}
+body.crypt-dark .crypt-slider-content{
+    background: #121a2f;
+}
+.crypt-slider-content .crypt-slider-balance{
+    padding: 60px 25px 60px 36px;
+    border-right: 1px solid #ecf4fe;
+}
+body.crypt-dark .crypt-slider-content .crypt-slider-balance{
+    border-right: 1px solid #202943;   
+}
+.crypt-slider-content .crypt-slider-balance h5{}
+.crypt-slider-content .crypt-slider-balance p:first-child{}
+.crypt-slider-content .crypt-slider-balance p:last-child{
+    margin: 0;
+}
+.crypt-slider-content .crypt-slider-balance p:last-child a{
+    text-decoration: none;
+}
+.crypt-slider-content .crypt-slider-balance p:last-child a:first-child{
+    margin-right: 20px;
+}
+.crypt-slider-current-status{
+    padding: 55px 30px;
+}
+
+/* =---- dash board ---- */
+.crypt-dash-search{
+    position: relative;
+}
+.crypt-dash-search input[type=search]{
+    height: 48px;
+    border: 1px solid #ecf4fe;
+    width: 100%;
+    background: #f9fcff;
+    padding: 10px;
+}
+body.crypt-dark .crypt-dash-search input[type=search]{
+    height: 48px;
+    border: 1px solid #202943;
+    width: 100%;
+    background: #202943;
+    padding: 10px;
+    color: #fff;
+}
+.crypt-dash-search input[type=search]:focus{
+    outline: none;
+}
+.crypt-dash-search button[type=submit]{
+    position: absolute;
+    top: 0;
+    padding: 14px;
+    background: transparent;
+    border: none;
+    right: 0;
+}
+.crypt-dash-search button[type=submit] i{
+    font-weight: 600;
+    /* right: 0; */
+}
+body.crypt-dark .crypt-dash-search button[type=submit] i{
+    color: #fff;
+    /* right: 0; */
+}
+.crypt-dash-search button[type=submit]:focus{}
+.crypt-big-list{
+    margin-top: 10px;
+    padding: 0;
+    margin-bottom: 0;
+}
+.crypt-big-list li{
+    /* padding: 25px; */
+    list-style: none;
+    border: 1px solid #ecf4fe;
+    margin-bottom: 10px;
+}
+body.crypt-dark .crypt-big-list li{
+    border: 1px solid #2f3a56;
+}
+.crypt-big-list li a{
+    display: block;
+    padding: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 800;
+    font-size: 15px;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+}
+body.crypt-dark .crypt-big-list li a{
+    color: #fff;
+}
+.crypt-big-list li a:hover,
+.crypt-big-list li a:focus{
+    background: #ffedea;
+}
+body.crypt-dark .crypt-big-list li a:hover,
+body.crypt-dark .crypt-big-list li a:focus{
+    background: #242c40 !important;
+}
+.crypt-big-list li:last-child{
+    margin-bottom:0;
+}
+.crypt-big-list li:nth-child(odd){
+    background: rgba(71, 88, 74, 0.07);
+}
+.crypt-dash-withdraw{}
+.crypt-withdraw-heading{
+    background: #202943;
+    padding: 25px 0 25px 35px;
+}
+.crypt-withdraw-heading p{
+    margin-bottom: 0;
+}
+.icon-big{
+    font-size: 35px;
+    display:inline-block;
+    font-weight: 800;
+    vertical-align: middle;
+    margin-top: -10px;
+}
+.icon-big + p{
+    display: inline-block;
+    margin-top: 10px;
+}
+body.crypt-dark .crypt-withdraw-body{
+    background: #131a33 !important;
+}
+.crypt-withdraw-body .nav-pills{
+    padding: 30px 7px;
+}
+.crypt-withdraw-body .nav-pills a{
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+    font-weight: 800;
+}
+body.crypt-dark .crypt-withdraw-body .nav-pills a{
+    color: #fff;
+}
+body.crypt-dark .crypt-withdraw-body .nav-pills a.active{
+
+    color: #f7614e;
+}
+.crypt-withdraw-body .nav-pills a.active{
+    background: transparent;
+    color: #f7614e;
+}
+.crypt-withdraw-body .nav-pills a i{
+    font-weight: 600;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 8px;
+}
+.crypt-withdraw-body .tab-content{
+    border-left: 1px solid #f1f1f1;
+    padding: 30px;
+}
+
+body.crypt-dark .crypt-withdraw-body .tab-content{
+    border-left: 1px solid #2f3a56;
+    padding: 30px;
+}
+.crypt-withdraw-body .tab-content .tab-pane{}
+
+/*---- deposit form ----*/
+.deposit-form{}
+.crypt-radio-boxed{
+    position: relative;
+    display: inline-block;
+    width: 49%;
+}
+.crypt-radio-boxed:nth-child(odd){
+    margin-right: 4px;
+}
+.crypt-radio-boxed input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.crypt-radio-boxed label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 25px 25px 25px 56px;
+  margin: 5px auto;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  border: 1px solid #f1f1f1;
+  font-weight: 600;
+}
+
+body.crypt-dark .crypt-radio-boxed label{
+  display: block;
+  color: #fff;
+  position: relative;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 25px 25px 25px 56px;
+  margin: 5px auto;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  border: 1px solid #2f3a56;
+  font-weight: 600;
+}
+.crypt-radio-boxed label:hover{
+  border: 1px solid #ddd;
+}
+
+.crypt-radio-boxed:hover label{
+    color: #555;
+}
+.crypt-radio-boxed label img{
+    width: 25px;
+    float: right;
+}
+
+.crypt-radio-boxed .check{
+  display: block;
+  position: absolute;
+  border: 5px solid #AAAAAA;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 38%;
+  left: 20px;
+  z-index: 5;
+  transition: border .25s linear;
+  -webkit-transition: border .25s linear;
+}
+
+.crypt-radio-boxed:hover .check {
+  border: 5px solid #888;
+}
+
+.crypt-radio-boxed .check::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+  height: 11px;
+  width: 11px;
+  top: 2px;
+  left: 2px;
+  margin: auto;
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
+}
+
+.crypt-radio-boxed input[type=radio]:checked ~ .check {
+  border: 5px solid #49c279;
+}
+
+.crypt-radio-boxed input[type=radio]:checked ~ .check::before{
+  background: #49c279;
+}
+
+.crypt-radio-boxed input[type=radio]:checked ~ label{
+  color: #49c279;
+}
+
+select.crypt-image-select{
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #f1f1f1;
+    outline: none;
+}
+body.crypt-dark select.crypt-image-select{
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #2f3a56;
+    outline: none;
+    color:#ddd;
+    background: #131a33;
+}
+select.crypt-image-select option{}
+.input-text-select{}
+.input-text-select input[type=text]{
+    border-radius: 0;
+}
+.input-text-select select{
+    padding: 10px;
+    height: 50px;
+}
+.input-text-select .input-group-prepend{
+    width: 70%;
+}
+.crypt-input-lg{
+    height: 50px;
+}
+row.md-gutter [class*='col-'] {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+/*----- candlestick chart --------*/
+#crypt-candle-chart > div > div{
+    width: 100%;
+    height: 400px !important;
+}
+.crypt-star{
+    margin-top: -4px;
+}
+@media (min-width: 350px) { 
+    .d-xs-none{
+        display: none;
+    }
+}
+@media ( max-width: 1200px ){
+    .crypt-floatable-menu{
+        display: none;
+    }
+}
+@media ( max-width: 900px ){
+    .crypt-radio-boxed{
+        width: 98%;
+    }
+    .crypt-withdraw-body .nav-pills a{
+        padding: 10px 0 0 10px;
+    }
+}
+body{
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-3dlight-color: #C0C0C0;
+  scrollbar-highlight-color: #C0C0C0;
+  scrollbar-track-color: #EBEBEB;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: #C0C0C0;
+  scrollbar-dark-shadow-color: #C0C0C0;
+}
+/*mozilla scrolbalken*/
+@-moz-document url-prefix(http://),url-prefix(https://) {
+    scrollbar {
+       -moz-appearance: none !important;
+       background: rgb(0,255,0) !important;
+    }
+    thumb,scrollbarbutton {
+       -moz-appearance: none !important;
+       background-color: rgb(0,0,255) !important;
+    }
+
+    thumb:hover,scrollbarbutton:hover {
+       -moz-appearance: none !important;
+       background-color: rgb(255,0,0) !important;
+    }
+
+    scrollbarbutton {
+       display: none !important;
+    }
+
+    scrollbar[orient="vertical"] {
+      width: 3px;
+    }
+}
+/**/
+::-webkit-scrollbar {
+    background: transparent;
+    width: 6px;
+    height: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: solid rgba(0,0,0,0) 2px;
+    transition: all 0.4s ease
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/*------- Login / Register ------------*/
+.cryptorio-forms{}
+.cryptorio-forms-dark{}
+.cryptorio-forms-dark .cryptorio-main-form{
+    background: #131722 image-url('bg.png') center no-repeat;
+    padding: 70px 60px 100px 60px;
+    box-shadow: 0 0 53px #00000063;
+    border-radius: 5px;
+}
+.cryptorio-main-form label{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.cryptorio-main-form a{
+    font-size: 15px;
+    font-weight: 600;
+}
+.cryptorio-main-form input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+}
+.cryptorio-forms-dark .cryptorio-main-form label{
+    color: #fff;
+}
+.cryptorio-forms-dark .cryptorio-main-form input{
+
+background-color: #1B2134;
+
+border: 1px solid #2c3552;
+}
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    #candlestick {
+        position: relative;
+        height: 100%;
+        & > .mask {
+            color: #fff;
+        }
+        #candlestick_chart {
+            padding-top: 60px;
+        }
+    }
+    #range_switch {
+        position: absolute;
+        top: 0;
+        display: flex;
+        li {
+            padding: 5px 10px;
+            span {
+                color: #fff;
+            }
+        }
+    }
+    #indicator_switch_wrapper {
+        position: absolute;
+        top: 30px;
+        ul.list-inline {
+            display: flex;
+            & > li {
+                padding: 5px 10px;
+                span {
+                    color: #fff;
+                }
+                ul li {
+                    padding: 0 10px 0 0;
+                }
+                ul li:last-child {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+.all-trades tr td.my i { display: none; }
+.all-trades tr.mine td.my i { display: inline; }
+
+.my-trades tbody {
+    display: none;
+}
+
+.text-up { color: rgb(77, 215, 16) !important; }
+.text-down { color: rgb(208, 0, 23) !important; }
+
+.markets {
+    tr.markets-toggle.hide { display: none; }
+}
+
+#market_list_container .crypt-tab-content,
+#market_trades_container #history {
+    overflow-y: scroll;
+    height: 818px;
+    background: #0e162d;
+}
+
+#market_trades_container #history {
+    height: 845px;
+}
+
+body.crypt-dark .crypt-market-status {
+    background: #0e162d;
+}
+
+.no-border {
+    border: none;
+}
+
+#ask_entry .label.label-info {
+    left: 84px;
+}
+
+#balance {
+    height: 343px;
+    overflow-y: scroll;
+}

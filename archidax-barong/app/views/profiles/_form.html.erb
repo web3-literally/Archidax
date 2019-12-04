@@ -1,0 +1,62 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row form-group">
+    <div class="col-6">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, id: :profile_first_name, placeholder: 'First name' %>
+    </div>
+
+    <div class="col-6">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, id: :profile_last_name, placeholder: 'Last name' %>
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <div class="col-6">
+      <%= form.label :dob, "Date of birth" %>
+      <div class="down-arrow">
+        <%= form.text_field :dob, id: :profile_dob, class: 'datepicker-toggle', 'data-date-format': 'yyyy-mm-dd', 'data-date-end-date': '-1d', placeholder: 'Date of birth' %>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <%= form.label :country %>
+      <div class="select-wrapper" include="form-input-select()">
+        <%= display_country %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-12">
+      <%= form.label :address %>
+      <%= form.text_field :address, id: :profile_address, placeholder: 'Address' %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-6">
+      <%= form.label :city %>
+      <%= form.text_field :city, id: :profile_city, placeholder: 'City' %>
+    </div>
+
+    <div class="col-6">
+      <%= form.label :postcode %>
+      <%= form.text_field :postcode, id: :profile_postcode, placeholder: 'Postcode' %>
+    </div>
+  </div>
+
+  <%= submit_tag  "CONFIRM", class: "crypt-button-red-full" %>
+<% end %>

@@ -1,0 +1,145 @@
+<!-- <section class="withdraw-instruction my-5">
+  <div class="row">
+    <div class="col-2 text-center">
+      <h4 class="steps">1</h4>
+    </div>
+
+    <div class="col-10">
+      <p> {{"funds.deposit_coin.open-wallet" | t}} </p>
+    </div>
+  </div>
+
+  <hr class="split">
+
+  <div class="row">
+    <div class="col-2 text-center">
+      <h4 class="steps">2</h4>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-md-7">
+          <p class="clearfix">{{"funds.deposit_coin.detail" | t}}</p>
+        </div>
+        <div class="col-md-5 pb-3">
+          <div id="qrcode" class="qrcode-container img-thumbnail" style="height: 190px; width: 190px;" data-width="180" data-height="180" data-text="{{account.deposit_address}}" title="{{account.deposit_address}}"></div>
+        </div>
+        <div class="col-12" style="padding-bottom: 15px;">
+          <ng-include src="'/templates/funds/_address.html'"></ng-include>
+          <br>{{"funds.deposit_coin.scan-qr" | t}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="split">
+
+  <div class="row">
+    <div class="col-2 text-center"><h4 class="steps">3</h4></div>
+    <div class="col-10">
+      <p>{{"funds.deposit_coin.after_deposit" | t}}</p>
+    </div>
+  </div>
+
+</section> -->
+
+<div class="crypt-dash-withdraw mt-3 d-block" id="bitcoin">
+  <div class="crypt-withdraw-heading">
+    <div class="row">
+      <div class="col-md-3">
+        <p><b>1 BTC</b></p>
+        <p class="crypt-up"><b>$3,483.59 USD (0.28%) </b></p>
+      </div>
+      <div class="col-md-5">
+        <i class="pe-7s-lock icon-big"></i> 
+        <p class="show-locked-amount"><b>Locked: $ <span>0.00</span></b></p>
+      </div>
+      <div class="col-md-4">
+        <p><b>Total:</b></p>
+        <p class="crypt-up"><b> $ 23454.00</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="crypt-withdraw-body bg-white">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+          <!-- <a class="nav-link active" id="v-pills-zilliqua-btc-deposit-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-deposit" role="tab" aria-controls="v-pills-zilliqua-btc-deposit" aria-selected="true">
+              <i class="pe-7s-bottom-arrow"></i> Deposit
+          </a>
+
+          <a class="nav-link" id="v-pills-zilliqua-btc-withdrawl-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-withdrawl" role="tab" aria-controls="v-pills-zilliqua-btc-withdrawl" aria-selected="false">
+              <i class="pe-7s-up-arrow"></i> Withdraw
+          </a>
+
+          <a class="nav-link" id="v-pills-zilliqua-btc-history-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-history" role="tab" aria-controls="v-pills-zilliqua-btc-history" aria-selected="false">
+              <i class="pe-7s-clock"></i> History
+          </a> -->
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="tab-content" id="v-pills-zilliqua-btc-tabContent">
+          <div class="tab-pane fade show active">
+
+            <h2 class="panel-title">{{"funds.deposit_coin.title" | t:currencyTranslationLocals}}</h2>
+            <section class="withdraw-instruction my-5">
+              <div class="row">
+                <div class="col-2 text-center">
+                  <h4 class="steps">1</h4>
+                </div>
+
+                <div class="col-10">
+                  <p> {{"funds.deposit_coin.open-wallet" | t}} </p>
+                </div>
+              </div>
+
+              <hr class="split">
+
+              <div class="row">
+                <div class="col-2 text-center">
+                  <h4 class="steps">2</h4>
+                </div>
+                <div class="col-10">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <p class="clearfix">{{"funds.deposit_coin.detail" | t}}</p>
+                    </div>
+                    <div class="col-md-5 pb-3">
+                      <div id="qrcode" class="qrcode-container img-thumbnail" style="height: 110px; width: 110px;" data-width="100" data-height="100" data-text="{{account.deposit_address}}" title="{{account.deposit_address}}"></div>
+                    </div>
+                    <div class="col-12" style="padding-bottom: 15px;">
+                      <ng-include src="'/templates/funds/_address.html'"></ng-include>
+                      <br>{{"funds.deposit_coin.scan-qr" | t}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="split">
+
+              <div class="row">
+                <div class="col-2 text-center"><h4 class="steps">3</h4></div>
+                <div class="col-10">
+                  <p>{{"funds.deposit_coin.after_deposit" | t}}</p>
+                </div>
+              </div>
+
+            </section>
+
+            <ng-include src="'/templates/funds/_deposit_coin_history.html'"></ng-include>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  if ($('.selected.deposit-now').length > 0) {
+    $('.show-locked-amount span').text($('.selected.deposit-now').val());
+  } else {
+    $('.show-locked-amount span').text($('.selected.withdraw-now').val());
+  }
+  $('p.currency-deposit').css('left', ( parseInt( $('.crypt-deepblue-segment').width() ) + 50 ) +'px')
+  $('p.currency-withdraw').css('left', ( parseInt( $('.crypt-deepblue-segment').width() ) + 50 ) +'px')
+</script>

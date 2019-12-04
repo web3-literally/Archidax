@@ -1,0 +1,54 @@
+<h3 class="p-4"><span class="text-muted">Verification > </span>Add mobile phone</h3>
+
+<div class="cryptorio-main-form">
+  <div class="d-flex justify-content-center box-shadow">
+    <div class="steps d-flex justify-content-between pb-2 px-5 mb-2">
+      <div class="col-4 step-col first">
+        <div class="step completed"></div>
+        <small>Email</small>
+      </div>
+      <div class="col-4 step-col">
+        <div class="step current"></div>
+        <small>Phone</small>
+      </div>
+      <div class="col-4 step-col last">
+        <div class="step"></div>
+        <small>Document</small>
+      </div>
+    </div>
+  </div>
+
+  <%= form_tag('/users/phones') do %>
+    <div class="form-group">
+        <%= label_tag :phone_number %>
+      <div class="row">
+        <div class="col-3">
+          <%= text_field_tag :country_code, nil, placeholder: '+1' %>
+        </div>
+        <div class="col-6 pr-0">
+          <%= text_field_tag :number, nil, placeholder: '000 000 0000' %>
+        </div>
+        <div class="col-3 pl-0">
+          <div class="send_code">
+          <div class="loader"></div>
+            <a href="javascript:void(0)" id="send-code-btn">Send code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mt-4">
+      <%= label_tag 'SMS confirmation code' %>
+      <%= number_field_tag :code, nil, placeholder: 'Enter code' %>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <%= submit_tag  'CONFIRM', class: 'crypt-button-red-full', id: 'create-phone', disabled: true %>
+      <div id="error"></div>
+    </div>
+  <% end %>
+
+  <% if account_signed_in? %>
+    <%= render 'layouts/shared/account_footer' %>
+  <% end %>
+</div>

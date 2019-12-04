@@ -1,0 +1,60 @@
+<!-- Modal -->
+<div class="modal fade otc_offer_dialog" id="otc_offer_dialog_bid" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= form_for 'otc_order_bid', url: "/otc_markets/#{otc_market.fetch(:id)}/otc_order_bids", remote: true, html: {class: 'otc_order_bid', id: 'otc_order_bid'} do |f| %>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="otc_bid_dialog_title">
+            <%= "#{t('.otc_offer')}" %>
+            (<%= t('.buy') %><span class="crypt-down"><%= otc_market.fetch(:ask_unit).upcase %></span>)
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><%= "#{t('.price')}" %></span>
+            </div>
+            <%= f.text_field :price, class: 'form-control', id: 'otc_bid_modal_price' %>
+            <div class="input-group-append">
+              <span class="input-group-text"><%= otc_market.fetch(:bid_unit).upcase %></span>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><%= "#{t('.amount')}" %></span>
+            </div>
+            <%= f.text_field :origin_volume, class: 'form-control', id: 'otc_bid_modal_volume' %>
+            <div class="input-group-append">
+              <span class="input-group-text"><%= otc_market.fetch(:ask_unit).upcase %></span>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><%= "#{t('.total')}" %></span>
+            </div>
+            <%= f.text_field :total, class: 'form-control', id: 'otc_bid_modal_total' %>
+            <div class="input-group-append">
+              <span class="input-group-text"><%= otc_market.fetch(:bid_unit).upcase %></span>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><%= "#{t('.msg')}" %></span>
+            </div>
+            <%= f.text_area :msg, class: 'form-control' %>
+          </div>
+          <%= f.hidden_field :state, value: 'offer', id: 'otc_bid_modal_state' %>
+          <%= f.hidden_field :offer_id, id: 'otc_bid_modal_offer_id' %>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary"><%= "#{t('.offer')}" %></button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= "#{t('.cancel')}" %></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<!-- End Modal -->

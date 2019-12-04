@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"><%= t('.currency') %></th>
+            <th scope="col"><%= t('.amount') %></th>
+            <th scope="col"><%= t('.locked') %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @data.fetch(:my_accounts).each do |account| %>
+          <% market = @data.fetch(:current_otc_market) %>
+          <% ccy = account.fetch(:currency) %>
+          <tr class="<%= ccy.fetch(:code) %>">
+            <td class="account-symbol">
+              <div><%= ccy[:code].upcase %></div>
+            </td>
+            <td class="account-balance">
+              <span class="amount" data-title="<%= t('.amount') %>"><%= account.fetch(:amount) %></span>
+            </td>
+            <td>
+              <span class="locked" data-title="<%= t('.locked') %>"><%= account.fetch(:locked) %></span>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td>
+            <span>Total:</span>
+          </td>
+          <td colspan="2"><span id="total_assets" data-title="<%= t('.title') %>"></span></td>
+        </tr>
+    </tbody>
+</table>

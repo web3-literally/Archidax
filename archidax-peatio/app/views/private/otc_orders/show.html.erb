@@ -1,0 +1,42 @@
+<% content_for :frame do %>
+  <h1 class="text-center p-2">Otc Order Detail</h1>
+
+  <div class="container">
+    <div class="otc-order-overview"></div>
+
+    <%= table_for [@otc_order], class: 'table table-condensed table-striped' do |table| %>
+      <% table.column :id %>
+      <% table.column :ask %>
+      <% table.column :bid %>
+      <% table.column :otc_market_id %>
+      <% table.column :price %>
+      <% table.column :volume %>
+      <% table.column :type %>
+      <% table.column :locked %>
+      <% table.column :action do |otc_order| %>
+        <%= link_to :Cancel, otc_order_path(otc_order) %>
+      <% end %>
+    <% end %>
+
+    <div class="otc-order-detail">
+      <h2 class="text-center p-3">
+        Offering Orders List
+      </h2>
+      <%= table_for @otc_offers, class: 'table table-condensed table-striped' do |table| %>
+        <% table.column :id %>
+        <% table.column :name do |offer_order| %>
+          <%= offer_order.member.name %>
+        <% end %>
+        <% table.column :msg %>
+        <% table.column :price %>
+        <% table.column :volume %>
+        <% table.column :type %>
+        <% table.column :action do |offer_order| %>
+          <%= link_to :Accpet, accept_otc_order_path(@otc_order, {offer_id: offer_order.id}), method: :post %>
+          /
+          <%= link_to :Reject, reject_otc_order_path(@otc_order, {offer_id: offer_order.id}), method: :post %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

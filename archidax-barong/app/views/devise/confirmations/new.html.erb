@@ -1,0 +1,40 @@
+<!-- <div class="row justify-content-center">
+  <div class="container-fluid box-shadow mx-3">
+    <div class="mb-3">
+      <h2 class="title font-weight-bold">Resend confirmation instructions</h2>
+    </div>
+  </div>
+
+  <div class="container-fluid justify-content-center px-5 py-4">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control form-control-lg underlined', placeholder: 'Enter email' %>
+      </div>
+
+      <div class="mt-4">
+        <%= f.submit 'Resend', class: 'btn btn-block btn-success col-6' %>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+
+
+<h3 class="p-4">Resend confirmation instructions</h3>
+<div class="cryptorio-main-form">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "text-left" }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.label :email, 'Email' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: 'Your email/cellphone' %>
+
+    <%= f.submit 'Resend', class: 'crypt-button-red-full' %>
+  <% end %>
+
+  <% if account_signed_in? %>
+    <%= render 'layouts/shared/account_footer' %>
+  <% else %>
+    <%= render 'devise/shared/footer' %>
+  <% end %>
+</div>

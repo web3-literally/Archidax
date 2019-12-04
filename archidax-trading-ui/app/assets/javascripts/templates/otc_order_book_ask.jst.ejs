@@ -1,0 +1,14 @@
+<tr data-order="<%= index %>" data-order-id="<%= id %>" data-price="<%= price %>" data-volume="<%= volume %>" class="<%= classes %>">
+  <td class="price text-down" scope="col">
+    <%= formatter.mask_fixed_price(price) %>
+  </td>
+  <td class="volume" scope="col">
+    <%= formatter.mask_fixed_volume(volume) %>
+  </td>
+  <td class="amount" scope="col">
+    <%= formatter.amount(volume, price) %>
+  </td>
+  <th scope="col" scope="col">
+    Offer
+  </th>
+</tr>

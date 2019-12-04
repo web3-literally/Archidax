@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"><%= t('.time') %></th>
+            <th scope="col"><%= t('.buy') %>/<%= t('.sell') %></th>
+            <th scope="col"><%= t('.price') %> <%= market.fetch(:bid_unit).upcase %></th>
+            <th scope="col"><%= t('.volume') %> <%= market.fetch(:ask_unit).upcase %></th>
+            <th scope="col"><%= t('.amount') %> <%= market.fetch(:bid_unit).upcase %></th>
+            <th scope="col"><%= link_to t('.clear_all_html'),  "/otc_markets/#{@data.fetch(:current_otc_market).fetch(:id)}/otc_orders/clear", remote: true, method: :post, data: {confirm: t('.confirm_clear_all')} %></th>
+        </tr>
+    </thead>
+</table>
+<div class="empty-row">
+    <%= t('.no_open_orders') %>
+</div>
+<table class="table table-hover table-striped">
+    <tbody></tbody>
+</table>

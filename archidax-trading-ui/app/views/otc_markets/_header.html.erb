@@ -1,0 +1,52 @@
+<header>
+  <div class="container-full-width">
+    <div class="crypt-header">
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10">
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="crypt-logo"><%= image_tag 'logo.jpg' %></div>
+            </div>
+            <div class="col-xs-4">
+              <div class="crypt-mega-dropdown-menu"> <a href="" class="crypt-mega-dropdown-toggle"><%= @data.fetch(:current_otc_market).fetch(:name) %></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-16 col-lg-16 col-md-16 d-none d-md-block d-lg-block">
+          <ul class="crypt-heading-menu fright">
+            <li><a href="/trading/<%= @data.fetch(:current_otc_market)[:id] %>">Exchange</a></li>
+            <li><a href="/overview">Overview</a></li>
+            <li><a href="/marketcap">Market Cap</a></li>
+            <li><a href="/simple-trading/<%= @data.fetch(:current_otc_market)[:id] %>">Trading</a></li>
+            <% if @data[:current_member] %>
+              <li><a href="/funds">Account</a></li>
+              <li class="crypt-box-menu menu-red"><a href="/signout">logout</a></li>
+            <% else %>
+              <li class="crypt-box-menu menu-red"><a href="/accounts/sign_up">register</a></li>
+              <li class="crypt-box-menu menu-green"><a href="/accounts/sign_in">login</a></li>
+            <% end %>
+          </ul>
+        </div><i class="menu-toggle pe-7s-menu d-xs-block d-sm-block d-md-none d-sm-none"></i>
+      </div>
+    </div>
+  </div>
+  <div class="crypt-mobile-menu">
+    <ul class="crypt-heading-menu">
+      <li class="active"><a href="/trading/<%= @data.fetch(:current_otc_market)[:id] %>">Exchange</a></li>
+      <li><a href="/marketcap">Market Cap</a></li>
+      <li><a href="#">Treanding</a></li>
+      <li><a href="#">Tools</a></li>
+      <% if @data[:current_member] %>
+        <li class="crypt-box-menu menu-red"><a href="/signout">logout</a></li>
+      <% else %>
+        <li class="crypt-box-menu menu-red"><a href="/accounts/sign_up">register</a></li>
+        <li class="crypt-box-menu menu-green"><a href="/accounts/sign_in">login</a></li>
+      <% end %>
+    </ul>
+    <div class="crypt-gross-market-cap">
+      <h5>$34.795.90 <span class="crypt-up pl-2">+3.435 %</span></h5>
+      <h6>0.7925.90 BTC <span class="crypt-down pl-2">+7.435 %</span></h6>
+    </div>
+  </div>
+</header>

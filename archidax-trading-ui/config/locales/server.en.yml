@@ -1,0 +1,524 @@
+en:
+  markets:
+    show:
+      error: Failed
+      success: Success
+      analysis_panel: Analysis
+      help_panel: Help
+      done: DONE
+      cancel: CANCEL
+      cancel_confirm: Are your sure cancel order?
+      confirm: CONFIRM
+      ask_order: 'ASK ##sn#'
+      bid_order: 'BID ##sn#'
+      my_active_order: Active
+      my_done_order: Done
+      trades: Trading
+      chat: Chat Channel
+    market_list:
+      all: All Markets
+      all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+      ccy_html: "<i class='fa fa-check'></i><span>%{currency} Markets</span>"
+      price: Price
+      change: "24h %"
+    new_market_list:
+      all: All Markets
+      all_html: "<span>All</span>"
+      ccy_html: "<span>%{currency}</span>"
+      price: Price
+      change: "24h %"
+    range_switch:
+      switch_1: 1m
+      switch_5: 5m
+      switch_15: 15m
+      switch_30: 30m
+      switch_60: 1h
+      switch_120: 2h
+      switch_240: 4h
+      switch_360: 6h
+      switch_720: 12h
+      switch_1440: 1d
+      switch_4320: 3d
+      switch_10080: 1w
+    depths:
+      price: Price
+      amount: Amount
+      buy: Buy
+      sell: Sell
+      ask_orders: Sell
+      bid_orders: Buy
+    ticker:
+      last: Last Price
+      ask: ASK
+      bid: BID
+    bid_entry:
+      action: "Buy %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    ask_entry:
+      action: "Sell %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    new_bid_entry:
+      action: "Buy %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    new_ask_entry:
+      action: "Sell %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    place_order:
+      price_high: HIGH
+      price_low: LOW
+      full_bid: FULL
+      full_ask: EMPTY
+    order_book:
+      title: Order Book
+      volume: Volume
+      price: Price
+      amount: Amount
+      ask: ASK
+      bid: BID
+      fade_toggle_depth: Market Depth
+    new_order_book:
+      title: Order Book
+      volume: Volume
+      price: Price
+      amount: Amount
+      ask: ASK
+      bid: BID
+      fade_toggle_depth: Market Depth
+    trade_state:
+      new: New
+      partial: Partial
+    market_trades:
+      all: All
+      my: Mine
+      all_html: "<i class='fa fa-check'></i><span>All</span>"
+      my_html: "<i class='fa fa-check'></i><span>Mine</span>"
+      time: Time
+      price: Price
+      volume: Volume
+    header:
+      network: Connection State
+      vol: 24h Volume
+      high: High
+      low: Low
+      change: Change
+    settings:
+      sound: Sound
+      notification: Notify
+      funds: "Funds"
+      signout: "Sign Out"
+      settings: "Profile"
+      history: "History"
+    account_summary:
+      title: Summary
+      account: Account
+      amount: Amount
+      locked: Freeze
+      view_all_accounts: "View All"
+      hide_all_accounts: "Hide Other"
+    new_account_summary:
+      title: Summary
+      account: Account
+      amount: Amount
+      locked: Freeze
+    my_orders:
+      orders_wait: Latest Orders
+      orders_done: Completed Orders
+      orders_cancel: Cancel Orders
+      no_open_orders: You have no open orders.
+      clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
+      clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
+      clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
+      confirm_clear_all: Are you sure to cancel ALL orders?
+      confirm_clear_bids: Are you sure to cancel all BIDS?
+      confirm_clear_asks: Are you sure to cancel all ASKS?
+      price: Price
+      volume: Volume
+      amount: Amount
+      time: Place Time
+    new_my_orders:
+      orders_wait: Latest Orders
+      orders_done: Completed Orders
+      orders_cancel: Cancel Orders
+      no_open_orders: You have no open orders.
+      clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
+      clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
+      clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
+      confirm_clear_all: Are you sure to cancel ALL orders?
+      confirm_clear_bids: Are you sure to cancel all BIDS?
+      confirm_clear_asks: Are you sure to cancel all ASKS?
+      price: Price
+      volume: Volume
+      amount: Amount
+      time: Place Time
+    mask:
+      warning: Please <a href='%{frontend_url}/signup' class='crypt-down'>Sign up</a> or <a
+        href='%{frontend_url}/signin' class='crypt-up'>Sign in</a> for operation
+  otc_markets:
+    show:
+      error: Failed
+      success: Success
+      analysis_panel: Analysis
+      help_panel: Help
+      done: DONE
+      all: ALL
+      price: PRICE
+      balance: Balance
+      amount: Amount
+      change: CHANGE
+      time: TIME
+      volume: VOLUME
+      market_trades: Market Trades
+      my_trades: My Trades
+      market_orders: Market Orders
+      my_orders: My Orders
+      otc_desk: OTC Desk
+      buy: Buy
+      sell: Sell
+      closed_orders: Closed Orders
+      active_orders: Active Orders
+      cancel: CANCEL
+      cancel_confirm: Are your sure cancel order?
+      confirm: CONFIRM
+      ask_order: 'ASK ##sn#'
+      bid_order: 'BID ##sn#'
+      my_active_order: Active
+      my_done_order: Done
+      trades: Trading
+      otc_offer: OTC order offer
+      offer: Offer
+      total: Total
+      msg: Message
+    otc_ask_offer:
+      error: Failed
+      success: Success
+      offer: Offer
+      price: Price
+      balance: Balance
+      amount: Amount
+      total: Total
+      time: Time
+      buy: Buy
+      sell: Sell
+      closed_orders: Closed Orders
+      active_orders: Active Orders
+      cancel: Cancel
+      cancel_confirm: Are your sure cancel order?
+      offer_confirm: Are your sure offer order?
+      confirm: Confirm
+      ask_order: 'ASK ##sn#'
+      bid_order: 'BID ##sn#'
+      otc_offer: OTC order offer
+      msg: Message
+    otc_bid_offer:
+      error: Failed
+      success: Success
+      offer: Offer
+      price: Price
+      balance: Balance
+      amount: Amount
+      total: Total
+      time: Time
+      buy: Buy
+      sell: Sell
+      closed_orders: Closed Orders
+      active_orders: Active Orders
+      cancel: Cancel
+      cancel_confirm: Are your sure cancel order?
+      offer_confirm: Are your sure offer order?
+      confirm: Confirm
+      ask_order: 'ASK ##sn#'
+      bid_order: 'BID ##sn#'
+      otc_offer: OTC order offer
+      msg: Message
+    market_list:
+      all: All Markets
+      all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+      ccy_html: "<i class='fa fa-check'></i><span>%{currency} Markets</span>"
+      price: Price
+      change: "24h %"
+    new_market_list:
+      all: All Markets
+      all_html: "<span>All</span>"
+      ccy_html: "<span>%{currency}</span>"
+      price: Price
+      change: "24h %"
+    range_switch:
+      switch_1: 1m
+      switch_5: 5m
+      switch_15: 15m
+      switch_30: 30m
+      switch_60: 1h
+      switch_120: 2h
+      switch_240: 4h
+      switch_360: 6h
+      switch_720: 12h
+      switch_1440: 1d
+      switch_4320: 3d
+      switch_10080: 1w
+    depths:
+      price: Price
+      amount: Amount
+      buy: Buy
+      sell: Sell
+      ask_orders: Sell
+      bid_orders: Buy
+    ticker:
+      last: Last Price
+      ask: ASK
+      bid: BID
+    bid_entry:
+      action: "Buy %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    ask_entry:
+      action: "Sell %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    new_bid_entry:
+      action: "Buy %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    new_ask_entry:
+      action: "Sell %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+    place_order:
+      price_high: HIGH
+      price_low: LOW
+      full_bid: FULL
+      full_ask: EMPTY
+    otc_place_order:
+      price_high: HIGH
+      price_low: LOW
+      full_bid: FULL
+      full_ask: EMPTY
+    new_order_book:
+      title: Order Book
+      volume: Volume
+      price: Price
+      amount: Amount
+      ask: ASK
+      bid: BID
+      fade_toggle_depth: Market Depth
+    otc_order_book:
+      title: Order Book
+      volume: Volume
+      price: Price
+      amount: Amount
+      action: Action
+      offer: Offer
+      accept: Accept
+      reject: Reject
+      ask: ASK
+      bid: BID
+      fade_toggle_depth: Market Depth  
+    trade_state:
+      new: New
+      partial: Partial
+    market_trades:
+      all: All
+      my: Mine
+      all_html: "<i class='fa fa-check'></i><span>All</span>"
+      my_html: "<i class='fa fa-check'></i><span>Mine</span>"
+      time: Time
+      price: Price
+      volume: Volume
+    header:
+      network: Connection State
+      vol: 24h Volume
+      high: High
+      low: Low
+      change: Change
+    settings:
+      sound: Sound
+      notification: Notify
+      funds: "Funds"
+      signout: "Sign Out"
+      settings: "Profile"
+      history: "History"
+    account_summary:
+      title: Summary
+      account: Account
+      amount: Amount
+      locked: Freeze
+      view_all_accounts: "View All"
+      hide_all_accounts: "Hide Other"
+    new_account_summary:
+      title: Summary
+      account: Account
+      amount: Amount
+      locked: Freeze
+    my_orders:
+      orders_wait: Latest Orders
+      orders_done: Completed Orders
+      orders_cancel: Cancel Orders
+      no_open_orders: You have no open orders.
+      clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
+      clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
+      clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
+      confirm_clear_all: Are you sure to cancel ALL orders?
+      confirm_clear_bids: Are you sure to cancel all BIDS?
+      confirm_clear_asks: Are you sure to cancel all ASKS?
+      price: Price
+      volume: Volume
+      amount: Amount
+      time: Place Time
+    otc_market_list:
+      all: All Markets
+      all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+      ccy_html: "<i class='fa fa-check'></i><span>%{currency} Markets</span>"
+      price: Price
+      change: "24h %"
+    otc_bid_entry:
+      action: "Buy %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+      buy: Buy
+      sell: Sell
+      available: Available
+    otc_ask_entry:
+      action: "Sell %{currency}"
+      price: Price
+      last_price: Last Price
+      amount: Amount
+      total: Total
+      sell: Sell
+      buy: Buy
+      available: Available
+    otc_market_trades:
+      all: All
+      my: Mine
+      all_html: "<i class='fa fa-check'></i><span>All</span>"
+      my_html: "<i class='fa fa-check'></i><span>Mine</span>"
+      time: Time
+      price: Price
+      volume: Volume
+    otc_account_summary:
+      title: Summary
+      account: Account
+      amount: Amount
+      locked: Freeze
+      currency: Currency
+      view_all_accounts: "View All"
+      hide_all_accounts: "Hide Other"
+    otc_my_orders:
+      orders_wait: Latest Orders
+      orders_done: Completed Orders
+      orders_cancel: Cancel Orders
+      no_open_orders: You have no open orders.
+      clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
+      clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
+      clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
+      confirm_clear_all: Are you sure to cancel all OTC orders?
+      confirm_clear_bids: Are you sure to cancel all OTC BIDS?
+      confirm_clear_asks: Are you sure to cancel all OTC ASKS?
+      price: Price
+      volume: Volume
+      amount: Amount
+      buy: Buy
+      sell: Sell
+      time: Place Time
+    otc_description:
+      otc_desk: OTC Desk
+    new_my_orders:
+      orders_wait: Latest Orders
+      orders_done: Completed Orders
+      orders_cancel: Cancel Orders
+      no_open_orders: You have no open orders.
+      clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
+      clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
+      clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
+      confirm_clear_all: Are you sure to cancel ALL orders?
+      confirm_clear_bids: Are you sure to cancel all BIDS?
+      confirm_clear_asks: Are you sure to cancel all ASKS?
+      price: Price
+      volume: Volume
+      amount: Amount
+      time: Place Time
+    mask:
+      warning: Please <a href='%{frontend_url}/signup' class='crypt-down'>Sign up</a> or <a
+        href='%{frontend_url}/signin' class='crypt-up'>Sign in</a> for operation
+  'true': true
+  'false': false
+  trade:
+    markets: Markets
+    realtime_price:
+      title: Realtime Price
+    account_balance:
+      title: Balance
+  gon:
+    ask: Ask
+    bid: Bid
+    notification:
+      title: Tradeherald Exchange
+      enabled: Notification enabled.
+      new_trade: "%{kind} order#%{id} executed at %{price} %{quote_unit} for %{volume} %{base_unit}。"
+  back: Back
+  all: All
+  chart:
+    open: Open
+    high: High
+    low: Low
+    close: Close
+    price: Price
+    volume: Volume
+    candlestick: 'Candlestick'
+    line: 'Line'
+    minute: m
+    hour: Hour
+    day: Day
+    week: Week
+    month: Month
+    year: Year
+    zoom: Zoom
+    ask: ASK
+    bid: BID
+    depth: Depth
+    depth_title: Market Depth
+  'yes': 'Yes'
+  'no': 'No'
+  helpers:
+    action:
+      view: View
+      customer_service: contact us
+    submit:
+      order_ask:
+        create: ASK
+      order_bid:
+        create: BID
+      member:
+        update: Open Account
+  layouts:
+    application:
+      close: Close
+  shared:
+    market:
+      ticker:
+        ask_price: Ask
+        bid_price: Bid
+        high_price: High
+        low_price: Low
+        volume: Volume
+        latest_price: Last

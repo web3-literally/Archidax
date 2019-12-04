@@ -1,0 +1,26 @@
+<h3 class="p-4"><span class="text-muted">Verification > </span>Add document</h3>
+
+<div class="cryptorio-main-form">
+  <div class="d-flex justify-content-center box-shadow">
+    <div class="steps d-flex justify-content-between pb-2 px-5 mb-2">
+      <div class="col-4 step-col first">
+        <div class="step text-muted completed"></div>
+        <small>Email</small>
+      </div>
+      <div class="col-4 step-col">
+        <div class="step text-muted completed"></div>
+        <small>Phone</small>
+      </div>
+      <div class="col-4 step-col last">
+        <div class="step text-muted current"></div>
+        <small>Document</small>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'form', document: @document %>
+  
+  <% if account_signed_in? %>
+    <%= render 'layouts/shared/account_footer' %>
+  <% end %>
+</div>

@@ -1,0 +1,115 @@
+<!-- <h2 class="panel-title mb-3">{{"funds.deposit_fiat.title" | t:currencyTranslationLocals}}</h2>
+<div class="help-block" ng-bind-html="'funds.deposit_fiat.description' | t | unsafe"></div>
+
+<div ng-bind-html="bank_details_html | unsafe"></div>
+
+<div><span>Your reference: </span><strong ng-bind="current_user.sn"></strong>.</div>
+<div class="text-muted">IMPORTANT: This code identifies your deposit with your account. Include this code when submitting wire transfer.</div>
+
+<h2 class="panel-title mt-5 mb-3">{{ "funds.deposit_history.title" | t }}</h2>
+<table class="table" ng-controller="DepositHistoryController as dhCtrl">
+  <tr>
+    <th>{{ "funds.deposit_history.identification" | t }}</th>
+    <th>{{ "funds.deposit_history.time" | t }}</th>
+    <th>{{ "funds.deposit_history.amount" | t }}</th>
+    <th>Fee</th>
+    <th>{{ "funds.deposit_history.state_and_action" | t }}</th>
+  </tr>
+  <tr class="deposit_item" ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }" ng-repeat="deposit in dhCtrl.deposits | orderBy:predicate">
+    <td><span class="outlined-label">{{ deposit.id }}</span></td>
+    <td>{{ deposit.created_at | date:'yyyy-MM-dd HH:mm' }}</td>
+    <td>{{ deposit.amount }}</td>
+    <td>{{ deposit.fee }}</td>
+    <td>{{ 'funds.deposit_history.' + deposit.aasm_state | t }}
+      <span ng-if="dhCtrl.canCancel(deposit.aasm_state)">/
+        <a ng-click="dhCtrl.cancelDeposit(deposit); $event.preventDefault()" href="#" class="cancel_link">{{ "funds.deposit_history.cancel" | t }}</a>
+      </span>
+    </td>
+  </tr>
+  <tr ng-show="dhCtrl.canCancel(deposit.aasm_state)"><td colspan="6"><span class="help-block text-center">{{ "funds.deposit_history.no_data" | t }}</span></td></tr>
+</table> -->
+
+<div class="crypt-dash-withdraw mt-3 d-block" id="bitcoin">
+  <div class="crypt-withdraw-heading">
+    <div class="row">
+      <div class="col-md-3">
+        <p><b>1 BTC</b></p>
+        <p class="crypt-up"><b>$3,483.59 USD (0.28%) </b></p>
+      </div>
+      <div class="col-md-5">
+        <i class="pe-7s-lock icon-big"></i> 
+        <p class="show-locked-amount"><b>Locked: $ <span>0.00</span></b></p>
+      </div>
+      <div class="col-md-4">
+        <p><b>Total:</b></p>
+        <p class="crypt-up"><b> $ 23454.00</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="crypt-withdraw-body bg-white">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+          <!-- <a class="nav-link active" id="v-pills-zilliqua-btc-deposit-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-deposit" role="tab" aria-controls="v-pills-zilliqua-btc-deposit" aria-selected="true">
+              <i class="pe-7s-bottom-arrow"></i> Deposit
+          </a>
+
+          <a class="nav-link" id="v-pills-zilliqua-btc-withdrawl-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-withdrawl" role="tab" aria-controls="v-pills-zilliqua-btc-withdrawl" aria-selected="false">
+              <i class="pe-7s-up-arrow"></i> Withdraw
+          </a>
+
+          <a class="nav-link" id="v-pills-zilliqua-btc-history-tab" data-toggle="pill" href="#v-pills-zilliqua-btc-history" role="tab" aria-controls="v-pills-zilliqua-btc-history" aria-selected="false">
+              <i class="pe-7s-clock"></i> History
+          </a> -->
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="tab-content" id="v-pills-zilliqua-btc-tabContent">
+          <div class="tab-pane fade show active">
+            <h2 class="panel-title mb-3">{{"funds.deposit_fiat.title" | t:currencyTranslationLocals}}</h2>
+            <div class="help-block" ng-bind-html="'funds.deposit_fiat.description' | t | unsafe"></div>
+
+            <div ng-bind-html="bank_details_html | unsafe"></div>
+
+            <div><span>Your reference: </span><strong ng-bind="current_user.sn"></strong>.</div>
+            <div class="text-muted">IMPORTANT: This code identifies your deposit with your account. Include this code when submitting wire transfer.</div>
+
+            <h2 class="panel-title mt-5 mb-3">{{ "funds.deposit_history.title" | t }}</h2>
+            <table class="table" ng-controller="DepositHistoryController as dhCtrl">
+              <tr>
+                <th>{{ "funds.deposit_history.identification" | t }}</th>
+                <th>{{ "funds.deposit_history.time" | t }}</th>
+                <th>{{ "funds.deposit_history.amount" | t }}</th>
+                <th>Fee</th>
+                <th>{{ "funds.deposit_history.state_and_action" | t }}</th>
+              </tr>
+              <tr class="deposit_item" ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }" ng-repeat="deposit in dhCtrl.deposits | orderBy:predicate">
+                <td><span class="outlined-label">{{ deposit.id }}</span></td>
+                <td>{{ deposit.created_at | date:'yyyy-MM-dd HH:mm' }}</td>
+                <td>{{ deposit.amount }}</td>
+                <td>{{ deposit.fee }}</td>
+                <td>{{ 'funds.deposit_history.' + deposit.aasm_state | t }}
+                  <span ng-if="dhCtrl.canCancel(deposit.aasm_state)">/
+                    <a ng-click="dhCtrl.cancelDeposit(deposit); $event.preventDefault()" href="#" class="cancel_link">{{ "funds.deposit_history.cancel" | t }}</a>
+                  </span>
+                </td>
+              </tr>
+              <tr ng-show="dhCtrl.canCancel(deposit.aasm_state)"><td colspan="6"><span class="help-block text-center">{{ "funds.deposit_history.no_data" | t }}</span></td></tr>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  if ($('.selected.deposit-now').length > 0) {
+    $('.show-locked-amount span').text($('.selected.deposit-now').val());
+  } else {
+    $('.show-locked-amount span').text($('.selected.withdraw-now').val());
+  }
+  $('p.currency-deposit').css('left', ( parseInt( $('.crypt-deepblue-segment').width() ) + 50 ) +'px')
+  $('p.currency-withdraw').css('left', ( parseInt( $('.crypt-deepblue-segment').width() ) + 50 ) +'px')
+</script>

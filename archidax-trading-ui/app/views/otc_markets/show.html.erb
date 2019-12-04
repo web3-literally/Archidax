@@ -1,0 +1,77 @@
+<audio preload="preload" id="success-fx">
+  <source src="<%= audio_path('success.mp3') %>" />
+</audio>
+
+<audio preload="preload" id="warning-fx">
+  <source src="<%= audio_path('warning.mp3') %>" />
+</audio>
+<%= render 'header' %>
+<!-- Main Content -->
+<div class="container-fluid">
+  <div class="row sm-gutters">
+    <div class="col-lg-10">
+      <%= render partial: 'otc_market_list' %>
+    </div>
+    <div class="col-lg-14">
+      <div class="row sm-gutters">
+        <div class="col-md-24 pl-2 ml-1">
+          <%= render partial: 'otc_description' %>
+        </div>
+
+        <div class="col-md-24 pl-2 ml-1">
+          <div class="crypt-market-status">
+            <%= render partial: 'otc_market_trades' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row sm-gutters">
+      <div class="col-xl-10">
+        <div class="crypt-boxed-area">
+          <h6 class="crypt-bg-head"><b class="crypt-up">OTC <%= "#{t('.buy')}" %></b> / <b class="crypt-down"><%= "#{t('.sell')}" %></b></h6>
+          <div class="row no-gutters">
+            <div class="col-md-12">
+              <%= render partial: 'otc_bid_entry', locals: {otc_market: @data.fetch(:current_otc_market)} %>
+            </div>
+            <div class="col-md-12">
+              <%= render partial: 'otc_ask_entry', locals: {otc_market: @data.fetch(:current_otc_market)} %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-14">
+        <div>
+          <div class="crypt-market-status">
+            <div>
+              <ul class="nav nav-tabs">
+                <li role="presentation"><a href="#otc-active-orders" class="active" data-toggle="tab"><%= t('.active_orders') %></a></li>
+                <li role="presentation"><a href="#otc-my-orders" data-toggle="tab"><%= t('.my_orders') %></a></li>
+                <% if @data[:current_member] %>
+                  <li role="presentation"><a href="#balance" data-toggle="tab"><%= t('.balance') %></a></li>
+                <% end %>
+              </ul>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="otc-active-orders">
+                  <%= render partial: 'otc_order_book' %>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="otc-my-orders">
+                  <%= render partial: 'otc_my_orders', locals: { market: @data.fetch(:current_otc_market) } %>
+                </div>
+                <% if @data[:current_member] %>
+                  <div role="tabpanel" class="tab-pane" id="balance">
+                    <%= render partial: 'otc_account_summary' %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'otc_ask_offer', locals: {otc_market: @data.fetch(:current_otc_market)} %>
+<%= render partial: 'otc_bid_offer', locals: {otc_market: @data.fetch(:current_otc_market)} %>

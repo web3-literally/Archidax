@@ -1,0 +1,38 @@
+<div class="crypt-buy-sell-form" id="otc_bid_entry">
+    <p>Buy <span class="crypt-up"><%= otc_market.fetch(:ask_unit).upcase %></span> <span class="fright">Available: <b class="crypt-up"><span class="current-balance number"></span> <%= otc_market.fetch(:bid_unit).upcase %></b></span></p>
+    <div class="crypt-buy">
+        <%= form_for 'otc_order_bid', url: "/otc_markets/#{otc_market.fetch(:id)}/otc_order_bids", remote: true, html: { class: 'otc_order_bid', id: 'otc_order_bid' } do |f| %>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"> <span class="input-group-text"><%= t('.price') %></span> </div>
+                <span class="label label-primary hint-price-disadvantage"></span>
+                <%= f.text_field :price, class: 'form-control' %>
+                <div class="input-group-append"> <span class="input-group-text"><%= otc_market.fetch(:bid_unit).upcase %></span> </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"> <span class="input-group-text"><%= t('.amount') %></span> </div>
+                <%= f.text_field :origin_volume, class: 'form-control' %>
+                <div class="input-group-append"> <span class="input-group-text"><%= otc_market.fetch(:ask_unit).upcase %></span> </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"> <span class="input-group-text"><%= t('.total') %></span> </div>
+                <span class="label label-info hint-positions"></span>
+                <%= f.text_field :total, class: 'form-control' %>
+                <div class="input-group-append"> <span class="input-group-text"><%= otc_market.fetch(:bid_unit).upcase %></span> </div>
+            </div>
+            <div>
+                <p>Fee: <span class="fright">100%x0.2=0.02</span></p>
+            </div>
+            <div class="text-center mt-3 mb-3 crypt-up">
+                <span class="label label-info status-info"></span>
+                <span class="label label-success status-success"></span>
+                <span class="label label-danger status-danger"></span>
+            </div>
+            <div class="menu-green">
+                <button class="crypt-button-green-full no-border" type="submit">
+                    <%= t('.action', currency: @data.fetch(:current_otc_market).fetch(:ask_unit).upcase) %>
+                </button>
+            </div>
+        <% end %>
+    </div>
+    <%= render partial: 'mask' %>
+</div>

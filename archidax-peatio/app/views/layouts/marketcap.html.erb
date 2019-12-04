@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="/favicon.ico" rel="shortcut icon"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <%= render 'shared/meta' %>
+	    <%= render 'shared/sentry' %>
+		<title>Crypterio</title>
+		<%= stylesheet_link_tag 'application', media: 'all' %>
+		<%= javascript_include_tag 'application' %>
+		<%= javascript_include_tag 'Chart.min' %>
+		<%= javascript_include_tag 'chart' %>
+	</head>
+	<body class="crypt-dark">
+		<%= render 'shared/header' %>
+		<%= yield %>
+	</body>
+</html>

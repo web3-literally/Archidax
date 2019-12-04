@@ -1,0 +1,19 @@
+<div class="col-md-3 col-lg-4 col-xl-4 account-list">
+  <accounts></accounts>
+</div>
+<div class="col-md-9 col-lg-8 col-xl-6">
+  <!-- {{template 'flash'}} -->
+  <ui-view></ui-view>
+</div>
+     
+
+<% content_for :scripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function(){
+      $.ajax({
+        type: "post",
+        url: "<%= gen_address_funds_path %>"
+      })
+    });
+  </script>
+<% end %>
